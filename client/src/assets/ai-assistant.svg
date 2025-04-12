@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F8FAFC" x="0" y="0" width="800" height="500"></rect>
+        
+        <!-- Main Chat Interface -->
+        <rect fill="#FFFFFF" x="50" y="50" width="700" height="400" rx="12"></rect>
+        
+        <!-- Chat Header -->
+        <rect fill="#EEF2FF" x="50" y="50" width="700" height="70" rx="12"></rect>
+        <circle fill="#3B82F6" cx="100" cy="85" r="20"></circle>
+        <rect fill="#DBEAFE" x="140" y="70" width="150" height="15" rx="2"></rect>
+        <rect fill="#DBEAFE" x="140" y="95" width="100" height="10" rx="2"></rect>
+        
+        <!-- Status Indicator -->
+        <circle fill="#10B981" cx="650" cy="85" r="8"></circle>
+        <rect fill="#DBEAFE" x="665" y="80" width="50" height="10" rx="2"></rect>
+        
+        <!-- Chat Messages -->
+        <!-- AI Message 1 -->
+        <rect fill="#F1F5F9" x="80" y="140" width="300" height="70" rx="8"></rect>
+        <circle fill="#3B82F6" cx="100" cy="160" r="10"></circle>
+        <rect fill="#E2E8F0" x="120" y="150" width="240" height="10" rx="2"></rect>
+        <rect fill="#E2E8F0" x="120" y="170" width="200" height="10" rx="2"></rect>
+        <rect fill="#E2E8F0" x="120" y="190" width="180" height="10" rx="2"></rect>
+        
+        <!-- User Message 1 -->
+        <rect fill="#DBEAFE" x="420" y="140" width="300" height="50" rx="8"></rect>
+        <circle fill="#64748B" cx="700" cy="160" r="10"></circle>
+        <rect fill="#BFDBFE" x="440" y="150" width="240" height="10" rx="2"></rect>
+        <rect fill="#BFDBFE" x="440" y="170" width="200" height="10" rx="2"></rect>
+        
+        <!-- AI Message 2 -->
+        <rect fill="#F1F5F9" x="80" y="220" width="350" height="120" rx="8"></rect>
+        <circle fill="#3B82F6" cx="100" cy="240" r="10"></circle>
+        <rect fill="#E2E8F0" x="120" y="230" width="280" height="10" rx="2"></rect>
+        <rect fill="#E2E8F0" x="120" y="250" width="250" height="10" rx="2"></rect>
+        
+        <!-- Data Visualization in Message -->
+        <rect fill="#FFFFFF" x="120" y="270" width="280" height="60" rx="4"></rect>
+        <rect fill="#60A5FA" x="140" y="290" width="40" height="30" rx="2"></rect>
+        <rect fill="#93C5FD" x="190" y="280" width="40" height="40" rx="2"></rect>
+        <rect fill="#3B82F6" x="240" y="270" width="40" height="50" rx="2"></rect>
+        <rect fill="#2563EB" x="290" y="285" width="40" height="35" rx="2"></rect>
+        <rect fill="#1D4ED8" x="340" y="275" width="40" height="45" rx="2"></rect>
+        
+        <!-- User Message 2 -->
+        <rect fill="#DBEAFE" x="420" y="230" width="300" height="50" rx="8"></rect>
+        <circle fill="#64748B" cx="700" cy="250" r="10"></circle>
+        <rect fill="#BFDBFE" x="440" y="240" width="240" height="10" rx="2"></rect>
+        <rect fill="#BFDBFE" x="440" y="260" width="200" height="10" rx="2"></rect>
+        
+        <!-- AI Message 3 -->
+        <rect fill="#F1F5F9" x="80" y="350" width="350" height="80" rx="8"></rect>
+        <circle fill="#3B82F6" cx="100" cy="370" r="10"></circle>
+        <rect fill="#E2E8F0" x="120" y="360" width="280" height="10" rx="2"></rect>
+        <rect fill="#E2E8F0" x="120" y="380" width="250" height="10" rx="2"></rect>
+        <rect fill="#E2E8F0" x="120" y="400" width="220" height="10" rx="2"></rect>
+        
+        <!-- Chat Input -->
+        <rect fill="#F1F5F9" x="80" y="450" width="640" height="50" rx="25"></rect>
+        <rect fill="#E2E8F0" x="120" y="470" width="500" height="10" rx="2"></rect>
+        <circle fill="#3B82F6" cx="680" cy="475" r="15"></circle>
+        <polygon fill="#FFFFFF" points="675,470 687,475 675,480"></polygon>
+        
+        <!-- Floating Effects -->
+        <circle fill="#DBEAFE" cx="720" cy="140" r="15" opacity="0.5"></circle>
+        <circle fill="#DBEAFE" cx="740" cy="180" r="8" opacity="0.3"></circle>
+        <circle fill="#DBEAFE" cx="710" cy="210" r="12" opacity="0.4"></circle>
+        
+        <circle fill="#BFDBFE" cx="60" cy="320" r="15" opacity="0.5"></circle>
+        <circle fill="#BFDBFE" cx="40" cy="360" r="8" opacity="0.3"></circle>
+        <circle fill="#BFDBFE" cx="70" cy="390" r="12" opacity="0.4"></circle>
+    </g>
+</svg>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F8FAFC" x="0" y="0" width="800" height="500"></rect>
+        
+        <!-- Flow Diagram -->
+        <rect fill="#FFFFFF" x="50" y="50" width="700" height="400" rx="8"></rect>
+        
+        <!-- Start Node -->
+        <circle fill="#ECFDF5" cx="150" cy="120" r="40"></circle>
+        <circle fill="#DCFCE7" cx="150" cy="120" r="30"></circle>
+        <polygon fill="#10B981" points="140,110 165,120 140,130"></polygon>
+        
+        <!-- Process Node 1 -->
+        <rect fill="#EEF2FF" x="250" y="90" width="150" height="60" rx="8"></rect>
+        <rect fill="#E0E7FF" x="265" y="105" width="120" height="30" rx="4"></rect>
+        <line x1="190" y1="120" x2="250" y2="120" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,5"></line>
+        <polygon fill="#94A3B8" points="245,115 255,120 245,125"></polygon>
+        
+        <!-- Decision Node -->
+        <polygon fill="#FFF7ED" points="325,200 375,250 325,300 275,250"></polygon>
+        <polygon fill="#FFEDD5" points="325,210 365,250 325,290 285,250"></polygon>
+        <line x1="325" y1="150" x2="325" y2="200" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,5"></line>
+        <polygon fill="#94A3B8" points="320,195 325,205 330,195"></polygon>
+        
+        <!-- Process Node 2 (Yes) -->
+        <rect fill="#F0FDF4" x="250" y="350" width="150" height="60" rx="8"></rect>
+        <rect fill="#DCFCE7" x="265" y="365" width="120" height="30" rx="4"></rect>
+        <line x1="325" y1="300" x2="325" y2="350" stroke="#10B981" stroke-width="2"></line>
+        <polygon fill="#10B981" points="320,345 325,355 330,345"></polygon>
+        <text font-family="Helvetica" font-size="14" font-weight="bold" fill="#10B981" x="328" y="325">Yes</text>
+        
+        <!-- Process Node 3 (No) -->
+        <rect fill="#FEF2F2" x="450" y="220" width="150" height="60" rx="8"></rect>
+        <rect fill="#FEE2E2" x="465" y="235" width="120" height="30" rx="4"></rect>
+        <line x1="375" y1="250" x2="450" y2="250" stroke="#EF4444" stroke-width="2"></line>
+        <polygon fill="#EF4444" points="445,245 455,250 445,255"></polygon>
+        <text font-family="Helvetica" font-size="14" font-weight="bold" fill="#EF4444" x="405" y="245">No</text>
+        
+        <!-- End Node 1 -->
+        <circle fill="#F0F9FF" cx="525" cy="350" r="40"></circle>
+        <circle fill="#E0F2FE" cx="525" cy="350" r="30"></circle>
+        <rect fill="#0EA5E9" x="515" y="340" width="20" height="20" rx="2"></rect>
+        <line x1="400" y1="380" x2="485" y2="350" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,5"></line>
+        <polygon fill="#94A3B8" points="480,348 490,350 480,352"></polygon>
+        
+        <!-- End Node 2 -->
+        <circle fill="#F0F9FF" cx="650" cy="250" r="40"></circle>
+        <circle fill="#E0F2FE" cx="650" cy="250" r="30"></circle>
+        <rect fill="#0EA5E9" x="640" y="240" width="20" height="20" rx="2"></rect>
+        <line x1="600" y1="250" x2="610" y2="250" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,5"></line>
+        <polygon fill="#94A3B8" points="605,245 615,250 605,255"></polygon>
+        
+        <!-- Workflow Label -->
+        <rect fill="#E0E7FF" x="100" y="30" width="200" height="30" rx="6"></rect>
+        <rect fill="#C7D2FE" x="120" y="40" width="160" height="10" rx="2"></rect>
+        
+        <!-- Gear Icons -->
+        <circle fill="#CBD5E1" cx="80" cy="400" r="20"></circle>
+        <circle fill="#94A3B8" cx="80" cy="400" r="10"></circle>
+        <circle fill="#64748B" cx="80" cy="400" r="4"></circle>
+        
+        <circle fill="#CBD5E1" cx="700" cy="80" r="20"></circle>
+        <circle fill="#94A3B8" cx="700" cy="80" r="10"></circle>
+        <circle fill="#64748B" cx="700" cy="80" r="4"></circle>
+        
+        <circle fill="#CBD5E1" cx="650" cy="420" r="20"></circle>
+        <circle fill="#94A3B8" cx="650" cy="420" r="10"></circle>
+        <circle fill="#64748B" cx="650" cy="420" r="4"></circle>
+    </g>
+</svg>
