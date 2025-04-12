@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Facebook, Linkedin, Twitter, Instagram } from "lucide-react";
 import { z } from "zod";
+import contactImage from "@/assets/contact.svg";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
@@ -76,9 +77,17 @@ export default function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-600 mb-6">
               Have questions about Reoree? Our team is here to help. Reach out to us and we'll get back to you shortly.
             </p>
+            
+            <div className="mb-8">
+              <img 
+                src={contactImage} 
+                alt="Contact Reoree" 
+                className="w-full max-w-md h-auto mx-auto lg:mx-0"
+              />
+            </div>
             
             <div className="space-y-6">
               <div className="flex items-start">

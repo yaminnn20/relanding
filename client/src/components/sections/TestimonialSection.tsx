@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import testimonialsImage from "@/assets/testimonials.svg";
 
 interface TestimonialCardProps {
   name: string;
@@ -73,6 +74,14 @@ export default function TestimonialSection() {
             See how Reoree is transforming businesses across industries.
           </p>
         </motion.div>
+        
+        <div className="mb-12">
+          <img 
+            src={testimonialsImage}
+            alt="Reoree Customer Testimonials" 
+            className="mx-auto max-w-full h-auto max-h-80"
+          />
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
