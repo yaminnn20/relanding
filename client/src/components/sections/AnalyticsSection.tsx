@@ -46,11 +46,11 @@ export default function AnalyticsSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
-                alt="Reoree Analytics Dashboard" 
-                className="w-full h-auto"
-              />
+              <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
+                <div className="text-gray-500">
+                  Reoree Analytics Dashboard
+                </div>
+              </div>
             </div>
           </motion.div>
           

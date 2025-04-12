@@ -84,11 +84,11 @@ export default function AutomationSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="inline-block relative">
-            <img 
-              src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" 
-              alt="Workflow Automation" 
-              className="rounded-xl shadow-xl w-full max-w-4xl mx-auto"
-            />
+            <div className="rounded-xl shadow-xl w-full max-w-4xl mx-auto bg-gray-200 h-64 flex items-center justify-center">
+              <div className="text-gray-500">
+                Workflow Automation
+              </div>
+            </div>
             <div className="absolute -top-5 -right-5 bg-emerald-500 text-white p-4 rounded-lg shadow-lg">
               <p className="text-sm font-bold">Reduce Manual Tasks by</p>
               <p className="text-3xl font-bold">80%</p>

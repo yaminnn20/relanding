@@ -37,11 +37,11 @@ export default function HeroSection() {
           >
             <div className="relative">
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
-                  alt="Reoree Business Management Dashboard" 
-                  className="w-full h-auto object-cover"
-                />
+                <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
+                  <div className="text-gray-500">
+                    Reoree Business Management Dashboard
+                  </div>
+                </div>
               </div>
               
               <motion.div 
