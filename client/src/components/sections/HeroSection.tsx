@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Sparkles, BarChart3 } from "lucide-react";
+import heroImage from "@/assets/hero.svg";
 
 export default function HeroSection() {
   return (
@@ -37,11 +38,11 @@ export default function HeroSection() {
           >
             <div className="relative">
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-                <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
-                  <div className="text-gray-500">
-                    Reoree Business Management Dashboard
-                  </div>
-                </div>
+                <img 
+                  src={heroImage} 
+                  alt="Reoree Business Management Dashboard" 
+                  className="w-full h-auto"
+                />
               </div>
               
               <motion.div 

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import analyticsImage from "@/assets/analytics.svg";
 
 const AnalyticsFeature = ({ title, description }: { title: string; description: string }) => (
   <div className="flex items-start">
@@ -46,11 +47,11 @@ export default function AnalyticsSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-              <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
-                <div className="text-gray-500">
-                  Reoree Analytics Dashboard
-                </div>
-              </div>
+              <img 
+                src={analyticsImage} 
+                alt="Reoree Analytics Dashboard" 
+                className="w-full h-auto"
+              />
             </div>
           </motion.div>
           

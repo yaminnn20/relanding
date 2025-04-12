@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FileText, Mail, DollarSign, Clock } from "lucide-react";
+import automationImage from "@/assets/automation.svg";
 
 interface AutomationCardProps {
   icon: React.ReactNode;
@@ -84,11 +85,11 @@ export default function AutomationSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="inline-block relative">
-            <div className="rounded-xl shadow-xl w-full max-w-4xl mx-auto bg-gray-200 h-64 flex items-center justify-center">
-              <div className="text-gray-500">
-                Workflow Automation
-              </div>
-            </div>
+            <img 
+              src={automationImage} 
+              alt="Workflow Automation" 
+              className="rounded-xl shadow-xl w-full max-w-4xl mx-auto"
+            />
             <div className="absolute -top-5 -right-5 bg-emerald-500 text-white p-4 rounded-lg shadow-lg">
               <p className="text-sm font-bold">Reduce Manual Tasks by</p>
               <p className="text-3xl font-bold">80%</p>
