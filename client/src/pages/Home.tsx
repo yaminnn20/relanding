@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import AIAssistantSection from "@/components/sections/AIAssistantSection";
+import ConversationalAISection from "@/components/sections/ConversationalAISection";
 import AnalyticsSection from "@/components/sections/AnalyticsSection";
 import AutomationSection from "@/components/sections/AutomationSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
@@ -13,21 +14,25 @@ import ContactSection from "@/components/sections/ContactSection";
 export default function Home() {
   useEffect(() => {
     // Set up smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80, // Adjust for header height
-            behavior: 'smooth'
-          });
-        }
-      });
+    const handleAnchorClick = (e: Event) => {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLAnchorElement;
+      const href = target.getAttribute('href');
+      
+      if (!href || href === '#') return;
+      
+      const element = document.querySelector(href);
+      if (element && element instanceof HTMLElement) {
+        window.scrollTo({
+          top: element.offsetTop - 80, // Adjust for header height
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach(anchor => {
+      anchor.addEventListener('click', handleAnchorClick);
     });
     
     // Set page title
@@ -44,8 +49,8 @@ export default function Home() {
     
     return () => {
       // Clean up event listeners
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function() {});
+      anchors.forEach(anchor => {
+        anchor.removeEventListener('click', handleAnchorClick);
       });
     };
   }, []);
@@ -57,6 +62,7 @@ export default function Home() {
         <HeroSection />
         <FeaturesSection />
         <AIAssistantSection />
+        <ConversationalAISection />
         <AnalyticsSection />
         <AutomationSection />
         <TestimonialSection />
