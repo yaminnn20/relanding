@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="500px" viewBox="0 0 800 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="conversationGradient">
+            <stop stop-color="#4F46E5" offset="0%"></stop>
+            <stop stop-color="#7C3AED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="contentGradient">
+            <stop stop-color="#60A5FA" offset="0%"></stop>
+            <stop stop-color="#3B82F6" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox" id="chatShadow">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F8FAFC" x="0" y="0" width="800" height="500"></rect>
+        
+        <!-- Background Design Elements -->
+        <circle fill="#EEF2FF" cx="100" cy="100" r="80" opacity="0.6"></circle>
+        <circle fill="#F3E8FF" cx="700" cy="400" r="100" opacity="0.6"></circle>
+        <circle fill="#EFF6FF" cx="400" cy="50" r="30" opacity="0.4"></circle>
+        <circle fill="#F0FDFA" cx="750" cy="150" r="20" opacity="0.4"></circle>
+        <circle fill="#F0F9FF" cx="50" cy="350" r="25" opacity="0.4"></circle>
+        
+        <!-- Chat Interface -->
+        <rect fill="#FFFFFF" x="100" y="80" width="600" height="340" rx="16" filter="url(#chatShadow)"></rect>
+        
+        <!-- Header -->
+        <rect fill="url(#conversationGradient)" x="100" y="80" width="600" height="60" rx="16 16 0 0"></rect>
+        <circle fill="#FFFFFF" cx="140" cy="110" r="15" opacity="0.9"></circle>
+        <rect fill="#FFFFFF" x="170" y="105" width="140" height="10" rx="2" opacity="0.9"></rect>
+        
+        <circle fill="#FFFFFF" cx="660" cy="110" r="8" opacity="0.6"></circle>
+        <circle fill="#FFFFFF" cx="630" cy="110" r="8" opacity="0.6"></circle>
+        <circle fill="#FFFFFF" cx="600" cy="110" r="8" opacity="0.6"></circle>
+        
+        <!-- Conversation Messages -->
+        <!-- User Message 1 -->
+        <rect fill="#F1F5F9" x="340" y="160" width="320" height="40" rx="8"></rect>
+        <rect fill="#E2E8F0" x="360" y="175" width="280" height="10" rx="2"></rect>
+        
+        <!-- AI Response 1 -->
+        <rect fill="#F0F9FF" x="140" y="220" width="520" height="80" rx="8"></rect>
+        <rect fill="#E0F2FE" x="160" y="235" width="480" height="10" rx="2"></rect>
+        <rect fill="#E0F2FE" x="160" y="255" width="440" height="10" rx="2"></rect>
+        <rect fill="#E0F2FE" x="160" y="275" width="350" height="10" rx="2"></rect>
+        
+        <!-- User Message 2 -->
+        <rect fill="#F1F5F9" x="440" y="320" width="220" height="40" rx="8"></rect>
+        <rect fill="#E2E8F0" x="460" y="335" width="180" height="10" rx="2"></rect>
+        
+        <!-- Entry Being Created Visual -->
+        <rect fill="#FFFFFF" x="180" y="380" width="440" height="100" rx="8" stroke="#E2E8F0" stroke-width="2"></rect>
+        <rect fill="#F1F5F9" x="200" y="400" width="180" height="20" rx="4"></rect>
+        <rect fill="#F1F5F9" x="200" y="440" width="400" height="20" rx="4"></rect>
+        
+        <rect fill="url(#contentGradient)" x="140" y="380" width="30" height="100" rx="4"></rect>
+        <rect fill="url(#contentGradient)" x="630" y="380" width="30" height="100" rx="4"></rect>
+        
+        <!-- Floating Elements -->
+        <g transform="translate(30, 150)">
+            <rect fill="#F0F9FF" x="0" y="0" width="50" height="50" rx="8"></rect>
+            <path d="M15,25 L35,25 M25,15 L25,35" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"></path>
+        </g>
+        
+        <g transform="translate(720, 200)">
+            <rect fill="#F0F9FF" x="0" y="0" width="50" height="50" rx="8"></rect>
+            <path d="M15,25 L35,25" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"></path>
+        </g>
+        
+        <g transform="translate(60, 430)">
+            <circle fill="#F0FDFA" cx="20" cy="20" r="20"></circle>
+            <path d="M15,20 L25,20 L20,15 M20,20 L20,25" stroke="#10B981" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+        
+        <g transform="translate(700, 80)">
+            <circle fill="#F0FDFA" cx="20" cy="20" r="20"></circle>
+            <path d="M15,15 L25,25 M15,25 L25,15" stroke="#10B981" stroke-width="2" stroke-linecap="round"></path>
+        </g>
+    </g>
+</svg>
