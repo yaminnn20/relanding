@@ -7,9 +7,7 @@ import AIAssistantSection from "@/components/sections/AIAssistantSection";
 import ConversationalAISection from "@/components/sections/ConversationalAISection";
 import AnalyticsSection from "@/components/sections/AnalyticsSection";
 import AutomationSection from "@/components/sections/AutomationSection";
-import TestimonialSection from "@/components/sections/TestimonialSection";
 import WaitlistSection from "@/components/sections/WaitlistSection";
-import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   useEffect(() => {
@@ -36,7 +34,7 @@ export default function Home() {
     });
     
     // Set page title
-    document.title = "Reoree - AI-Powered Business Management Suite";
+    document.title = "Reorbe - AI-Powered Business Management Suite";
     
     // Add meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -45,7 +43,7 @@ export default function Home() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Reoree combines conversational AI, powerful analytics, and workflow automation to streamline your business operations.');
+    metaDescription.setAttribute('content', 'Reorbe combines conversational AI, powerful analytics, and workflow automation to streamline your business operations.');
     
     return () => {
       // Clean up event listeners
@@ -65,9 +63,7 @@ export default function Home() {
         <ConversationalAISection />
         <AnalyticsSection />
         <AutomationSection />
-        <TestimonialSection />
         <WaitlistSection />
-        <ContactSection />
       </main>
       <Footer />
     </div>

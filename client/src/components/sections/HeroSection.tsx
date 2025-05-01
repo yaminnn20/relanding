@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero.svg";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="bg-gradient-to-r from-blue-500 to-indigo-500 pt-32 pb-20 md:pt-40 md:pb-32">
+    <section id="hero" className="bg-gradient-to-r from-teal-500 to-emerald-300 pt-32 pb-20 md:pt-40 md:pb-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center">
           <motion.div 
@@ -15,17 +15,17 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Transform Your Business with <span className="text-emerald-400">AI-Powered</span> Management
+              Transform Your Business with <span className="text-cyan-900">AI-Powered</span> Management
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Reoree combines conversational AI, powerful analytics, and workflow automation to streamline your business operations.
+            <p className="text-xl md:text-2xl text-cyan-100 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Reorbe combines conversational AI, powerful analytics, and workflow automation to streamline your business operations.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-blue-50" asChild>
+              <Button size="lg" className="bg-white text-gray-800  hover:text-white transition-colors" asChild>
                 <a href="#waitlist">Get Early Access</a>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-                <a href="#features">See Features</a>
+              <Button size="lg"  className="bg-white text-gray-800 hover:text-white transition-colors" asChild>
+                <a href="#features">See Benefits</a>
               </Button>
             </div>
           </motion.div>
@@ -40,7 +40,7 @@ export default function HeroSection() {
               <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
                 <img 
                   src={heroImage} 
-                  alt="Reoree Business Management Dashboard" 
+                  alt="Reorbe Business Management Dashboard" 
                   className="w-full h-auto"
                 />
               </div>

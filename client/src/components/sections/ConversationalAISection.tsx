@@ -88,7 +88,7 @@ export default function ConversationalAISection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Your Business, Just a Conversation Away</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Reoree's conversational AI transforms how you interact with your business data. Ask questions, give commands, and receive insights—all through natural conversation.
+            Reorbe's conversational AI transforms how you interact with your business data. Ask questions, give commands, and receive insights—all through natural conversation.
           </p>
         </motion.div>
         
@@ -118,7 +118,7 @@ export default function ConversationalAISection() {
             Proactive Business Intelligence
           </h3>
           <p className="text-gray-600 mb-6">
-            Beyond answering your questions, Reoree's AI actively monitors your business metrics and alerts you to opportunities and challenges before they impact your business.
+            Beyond answering your questions, Reorbe's AI actively monitors your business metrics and alerts you to opportunities and challenges before they impact your business.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {proactiveAlerts.map((alert, index) => (
@@ -139,10 +139,10 @@ export default function ConversationalAISection() {
         >
           <h3 className="text-2xl font-bold mb-4">Experience the Power of Conversational Business Management</h3>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            From retrieving data to executing complex tasks, Reoree's AI assistant adapts to your unique business needs and learns your preferences over time.
+            From retrieving data to executing complex tasks, Reorbe's AI assistant adapts to your unique business needs and learns your preferences over time.
           </p>
           <Button className="bg-primary hover:bg-blue-600 text-white" size="lg">
-            Request a Demo
+            Access Beta Demo
           </Button>
         </motion.div>
       </div>
