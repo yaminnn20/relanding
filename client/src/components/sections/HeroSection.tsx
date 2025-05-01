@@ -15,10 +15,11 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Transform Your Business with <span className="text-cyan-900">AI-Powered</span> Management
+            Your Next Hire Is <span className="text-cyan-900">Digital</span>. It Runs Ops. You Run the Vision.
+
             </h1>
-            <p className="text-xl md:text-2xl text-cyan-100 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Reorbe combines conversational AI, powerful analytics, and workflow automation to streamline your business operations.
+            <p className="text-xl md:text-2xl text-cyan-200 mb-8 max-w-2xl mx-auto lg:mx-0">
+            Reorbe combines AI, smart analytics, and automation to streamline your operations — giving you back time, clarity, and control.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <Button size="lg" className="bg-white text-gray-800  hover:text-white transition-colors" asChild>
