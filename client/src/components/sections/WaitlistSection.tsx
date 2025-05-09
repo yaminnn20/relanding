@@ -130,12 +130,11 @@ export function WaitlistSection() {
   ];
 
   return (
-    <section id="waitlist" className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="waitlist" className="py-12 sm:py-16 md:py-24 bg-gray-50 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
-        
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           className="max-w-3xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -143,52 +142,51 @@ export function WaitlistSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center mb-6">
-            
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900">Join the Early Access Program</h2>
+          <div className="flex items-center justify-center mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">Join the Early Access Program</h2>
           </div>
-          <p className="text-xl text-gray-600 mb-10">
+          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-10 px-4">
             Be the first to experience the future of business management. Limited access will be granted to early adopters.
           </p>
 
           <motion.div
-            className="bg-white p-8 rounded-xl shadow-lg border border-gray-200"
+            className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 mx-4 sm:mx-0"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {isSubmitted ? (
-              <div className="text-center py-8">
-                <div className="mx-auto rounded-full bg-emerald-50 w-20 h-20 flex items-center justify-center mb-4">
-                  <Check className="h-10 w-10 text-emerald-500" />
+              <div className="text-center py-6 sm:py-8">
+                <div className="mx-auto rounded-full bg-emerald-50 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mb-4">
+                  <Check className="h-8 w-8 sm:h-10 sm:w-10 text-emerald-500" />
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">Thank You!</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 text-gray-900">Thank You!</h3>
+                <p className="text-sm sm:text-base text-gray-600 px-4">
                   You've been added to our waitlist. We'll notify you when Reorbe will be available.
                 </p>
               </div>
             ) : (
-          <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FormField
-                control={form.control}
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <FormField
+                      control={form.control}
                       name="firstName"
-                render={({ field }) => (
-                  <FormItem>
+                      render={({ field }) => (
+                        <FormItem>
                           <FormLabel className="text-sm font-medium text-gray-700">First Name</FormLabel>
-                    <FormControl>
-                      <Input 
+                          <FormControl>
+                            <Input 
                               placeholder="Your first name"
                               className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
-                        {...field} 
-                      />
-                    </FormControl>
-                          <FormMessage className="text-red-500" />
-                  </FormItem>
-                )}
-              />
+                              {...field} 
+                            />
+                          </FormControl>
+                          <FormMessage className="text-red-500 text-xs sm:text-sm" />
+                        </FormItem>
+                      )}
+                    />
 
                     <FormField
                       control={form.control}
@@ -203,32 +201,32 @@ export function WaitlistSection() {
                               {...field}
                             />
                           </FormControl>
-                          <FormMessage className="text-red-500" />
+                          <FormMessage className="text-red-500 text-xs sm:text-sm" />
                         </FormItem>
                       )}
                     />
                   </div>
               
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
                         <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
-                    <FormControl>
-                      <Input 
-                        type="email"
+                        <FormControl>
+                          <Input 
+                            type="email"
                             placeholder="your@email.com"
                             className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
-                        {...field} 
-                      />
-                    </FormControl>
-                        <FormMessage className="text-red-500" />
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-500 text-xs sm:text-sm" />
                       </FormItem>
                     )}
                   />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <FormField
                       control={form.control}
                       name="motorcycleBrand"
@@ -253,25 +251,25 @@ export function WaitlistSection() {
                               ))}
                             </SelectContent>
                           </Select>
-                          <FormMessage className="text-red-500" />
-                  </FormItem>
-                )}
-              />
+                          <FormMessage className="text-red-500 text-xs sm:text-sm" />
+                        </FormItem>
+                      )}
+                    />
               
-              <FormField
-                control={form.control}
+                    <FormField
+                      control={form.control}
                       name="motorcycleModel"
-                render={({ field }) => (
-                  <FormItem>
+                      render={({ field }) => (
+                        <FormItem>
                           <FormLabel className="text-sm font-medium text-gray-700">Sub-Industry</FormLabel>
-                    <FormControl>
-                      <Input 
+                          <FormControl>
+                            <Input 
                               placeholder="Your sub-industry"
                               className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
-                        {...field} 
+                              {...field} 
                             />
                           </FormControl>
-                          <FormMessage className="text-red-500" />
+                          <FormMessage className="text-red-500 text-xs sm:text-sm" />
                         </FormItem>
                       )}
                     />
@@ -287,21 +285,21 @@ export function WaitlistSection() {
                             checked={field.value}
                             onCheckedChange={field.onChange}
                             className="border-gray-300 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500"
-                      />
-                    </FormControl>
+                          />
+                        </FormControl>
                         <div className="space-y-1 leading-none">
-                          <FormLabel className="text-sm text-gray-600">
+                          <FormLabel className="text-xs sm:text-sm text-gray-600">
                             I agree to receive updates about Reorbe and agree to the <a href="/terms" className="text-emerald-500 hover:text-emerald-600">terms of service</a>
                           </FormLabel>
                         </div>
-                  </FormItem>
-                )}
-              />
+                      </FormItem>
+                    )}
+                  />
               
-                  <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                type="submit" 
-                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white"
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-2 sm:py-3"
                       disabled={waitlistMutation.isPending}
                     >
                       {waitlistMutation.isPending ? "Submitting..." : "Join Waitlist"}
@@ -309,14 +307,14 @@ export function WaitlistSection() {
                     <Button
                       type="button"
                       variant="outline"
-                      className="flex-1 bg-teal-600  hover:bg-teal-700 text-white font-medium py-4"
+                      className="w-full sm:flex-1 bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 sm:py-3"
                       onClick={() => window.open('https://example.com', '_blank')}
                     >
-                      Take a Servey
-              </Button>
+                      Take a Survey
+                    </Button>
                   </div>
-            </form>
-          </Form>
+                </form>
+              </Form>
             )}
           </motion.div>
         </motion.div>

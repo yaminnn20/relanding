@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Loader2 } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { useToast } from "@/hooks/use-toast";
+import { GOOGLE_FORM_CONFIG } from "@/pages/config";
 import {
   Dialog,
   DialogContent,
@@ -21,12 +24,70 @@ import {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showIframe, setShowIframe] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingTime, setLoadingTime] = useState(3);
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     industry: "",
+  });
+
+  const waitlistMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      const formDataToSubmit = new FormData();
+      formDataToSubmit.append(GOOGLE_FORM_CONFIG.formFields.firstName, data.name.split(' ')[0] || '');
+      formDataToSubmit.append(GOOGLE_FORM_CONFIG.formFields.lastName, data.name.split(' ')[1] || '');
+      formDataToSubmit.append(GOOGLE_FORM_CONFIG.formFields.email, data.email);
+      formDataToSubmit.append(GOOGLE_FORM_CONFIG.formFields.motorcycleBrand, data.industry);
+      formDataToSubmit.append(GOOGLE_FORM_CONFIG.formFields.motorcycleModel, '');
+      formDataToSubmit.append(GOOGLE_FORM_CONFIG.formFields.consent, "Yes");
+
+      try {
+        const response = await fetch(
+          `https://docs.google.com/forms/d/e/${GOOGLE_FORM_CONFIG.formId}/formResponse`,
+          {
+            method: "POST",
+            body: formDataToSubmit,
+            mode: "no-cors",
+          }
+        );
+        return response;
+      } catch (error) {
+        console.error('Form submission error:', error);
+        throw error;
+      }
+    },
+    onSuccess: () => {
+      setShowDialog(false);
+      setIsLoading(true);
+      
+      // Start countdown timer
+      const timer = setInterval(() => {
+        setLoadingTime((prev) => {
+          if (prev <= 1) {
+            clearInterval(timer);
+            setIsLoading(false);
+            window.location.replace('https://demo.reorbe.com');
+            return 3;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+
+      toast({
+        title: "Success!",
+        description: "You've been added to our waitlist.",
+      });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Something went wrong",
+        description: "There was an error submitting your information. Please try again.",
+        variant: "destructive",
+      });
+    },
   });
 
   const toggleMenu = () => {
@@ -39,9 +100,7 @@ export default function Header() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you can add validation and API call if needed
-    setShowDialog(false);
-    setShowIframe(true);
+    waitlistMutation.mutate(formData);
   };
 
   useEffect(() => {
@@ -106,7 +165,7 @@ export default function Header() {
               <button 
                 type="button" 
                 onClick={toggleMenu}
-                className="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+                className="md:hidden p-2 rounded-md text-gray-800 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
               >
                 {isMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -162,6 +221,23 @@ export default function Header() {
         </div>
       </header>
 
+      {/* Loading Screen */}
+      {isLoading && (
+        <div className="fixed inset-0 z-50 bg-white flex flex-col items-center justify-center">
+          <div className="text-center space-y-4 w-full max-w-md px-4">
+            <Loader2 className="h-12 w-12 animate-spin text-primary mx-auto" />
+            <h2 className="text-2xl font-semibold text-gray-800">Setting up your demo environment</h2>
+            <p className="text-gray-600">Please wait while we prepare everything for you...</p>
+            <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-primary transition-all duration-1000"
+                style={{ width: `${((3 - Math.max(0, loadingTime)) / 3) * 100}%`, transformOrigin: 'left' }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Access Dialog */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
         <DialogContent className="sm:max-w-[425px]">
@@ -173,12 +249,13 @@ export default function Header() {
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">Full Name</Label>
               <Input
                 id="name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
+                placeholder="Enter your full name"
               />
             </div>
             <div className="space-y-2">
@@ -189,6 +266,7 @@ export default function Header() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
+                placeholder="Enter your email"
               />
             </div>
             <div className="space-y-2">
@@ -211,29 +289,16 @@ export default function Header() {
                 </SelectContent>
               </Select>
             </div>
-            <Button type="submit" className="w-full">Access Demo</Button>
+            <Button 
+              type="submit" 
+              className="w-full"
+              disabled={waitlistMutation.isPending}
+            >
+              {waitlistMutation.isPending ? "Submitting..." : "Access Demo"}
+            </Button>
           </form>
         </DialogContent>
       </Dialog>
-
-      {/* Full Page Iframe */}
-      {showIframe && (
-        <div className="fixed inset-0 z-50 bg-white">
-          <div className="relative w-full h-full">
-            <button
-              onClick={() => setShowIframe(false)}
-              className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100"
-            >
-              <X className="h-6 w-6" />
-            </button>
-            <iframe
-              src="https://www.reorbe.com"
-              className="w-full h-full border-0"
-              title="Reorbe Beta Demo"
-            />
-          </div>
-        </div>
-      )}
     </>
   );
 }
