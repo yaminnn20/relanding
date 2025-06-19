@@ -34,6 +34,21 @@ export default function Header() {
     industry: "",
   });
 
+  const businessFields = [
+    { value: "technology", label: "Technology" },
+    { value: "finance", label: "Finance & Banking" },
+    { value: "healthcare", label: "Healthcare" },
+    { value: "retail", label: "Retail & E-commerce" },
+    { value: "manufacturing", label: "Manufacturing" },
+    { value: "education", label: "Education" },
+    { value: "realestate", label: "Real Estate" },
+    { value: "hospitality", label: "Hospitality & Tourism" },
+    { value: "transportation", label: "Transportation & Logistics" },
+    { value: "energy", label: "Energy & Utilities" },
+    { value: "media", label: "Media & Entertainment" },
+    { value: "other", label: "Other" },
+  ];
+
   const waitlistMutation = useMutation({
     mutationFn: async (data: typeof formData) => {
       const formDataToSubmit = new FormData();
@@ -270,22 +285,21 @@ export default function Header() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="industry">Industry</Label>
+              <Label htmlFor="industry">Business Field</Label>
               <Select
                 value={formData.industry}
                 onValueChange={(value) => setFormData({ ...formData, industry: value })}
                 required
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select your industry" />
+                  <SelectValue placeholder="Select your business field" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="technology">Technology</SelectItem>
-                  <SelectItem value="finance">Finance</SelectItem>
-                  <SelectItem value="healthcare">Healthcare</SelectItem>
-                  <SelectItem value="retail">Retail</SelectItem>
-                  <SelectItem value="manufacturing">Manufacturing</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  {businessFields.map((field) => (
+                    <SelectItem key={field.value} value={field.value}>
+                      {field.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>

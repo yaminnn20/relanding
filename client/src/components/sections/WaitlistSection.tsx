@@ -116,16 +116,18 @@ export function WaitlistSection() {
     waitlistMutation.mutate(data);
   };
 
-  const motorcycles = [
-    { value: "bajaj", label: "Bajaj" },
-    { value: "honda", label: "Honda" },
-    { value: "yamaha", label: "Yamaha" },
-    { value: "royalenfield", label: "Royal Enfield" },
-    { value: "tvs", label: "Tvs" },
-    { value: "kawasaki", label: "Kawasaki" },
-    { value: "suzuki", label: "Suzuki" },
-    { value: "bmw", label: "BMW" },
-    { value: "aprilia", label: "Aprilia" },
+  const businessFields = [
+    { value: "technology", label: "Technology" },
+    { value: "finance", label: "Finance & Banking" },
+    { value: "healthcare", label: "Healthcare" },
+    { value: "retail", label: "Retail & E-commerce" },
+    { value: "manufacturing", label: "Manufacturing" },
+    { value: "education", label: "Education" },
+    { value: "realestate", label: "Real Estate" },
+    { value: "hospitality", label: "Hospitality & Tourism" },
+    { value: "transportation", label: "Transportation & Logistics" },
+    { value: "energy", label: "Energy & Utilities" },
+    { value: "media", label: "Media & Entertainment" },
     { value: "other", label: "Other" },
   ];
 
@@ -167,26 +169,26 @@ export function WaitlistSection() {
                 </p>
               </div>
             ) : (
-              <Form {...form}>
+          <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                    <FormField
-                      control={form.control}
+              <FormField
+                control={form.control}
                       name="firstName"
-                      render={({ field }) => (
-                        <FormItem>
+                render={({ field }) => (
+                  <FormItem>
                           <FormLabel className="text-sm font-medium text-gray-700">First Name</FormLabel>
-                          <FormControl>
-                            <Input 
+                    <FormControl>
+                      <Input 
                               placeholder="Your first name"
                               className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
-                              {...field} 
-                            />
-                          </FormControl>
+                        {...field} 
+                      />
+                    </FormControl>
                           <FormMessage className="text-red-500 text-xs sm:text-sm" />
-                        </FormItem>
-                      )}
-                    />
+                  </FormItem>
+                )}
+              />
 
                     <FormField
                       control={form.control}
@@ -207,20 +209,20 @@ export function WaitlistSection() {
                     />
                   </div>
               
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
                         <FormLabel className="text-sm font-medium text-gray-700">Email Address</FormLabel>
-                        <FormControl>
-                          <Input 
-                            type="email"
+                    <FormControl>
+                      <Input 
+                        type="email"
                             placeholder="your@email.com"
                             className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
-                            {...field} 
-                          />
-                        </FormControl>
+                        {...field} 
+                      />
+                    </FormControl>
                         <FormMessage className="text-red-500 text-xs sm:text-sm" />
                       </FormItem>
                     )}
@@ -232,21 +234,21 @@ export function WaitlistSection() {
                       name="motorcycleBrand"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">Industry</FormLabel>
+                          <FormLabel className="text-sm font-medium text-gray-700">Business Field</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger className="bg-white border-gray-200 text-gray-900 focus:border-emerald-500">
-                                <SelectValue placeholder="Select industry" />
+                                <SelectValue placeholder="Select business field" />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent className="bg-white border-gray-200 text-gray-900">
-                              {motorcycles.map((motorcycle) => (
+                              {businessFields.map((field) => (
                                 <SelectItem
-                                  key={motorcycle.value}
-                                  value={motorcycle.value}
+                                  key={field.value}
+                                  value={field.value}
                                   className="hover:bg-emerald-50 focus:bg-emerald-50"
                                 >
-                                  {motorcycle.label}
+                                  {field.label}
                                 </SelectItem>
                               ))}
                             </SelectContent>
@@ -256,17 +258,17 @@ export function WaitlistSection() {
                       )}
                     />
               
-                    <FormField
-                      control={form.control}
+              <FormField
+                control={form.control}
                       name="motorcycleModel"
-                      render={({ field }) => (
-                        <FormItem>
+                render={({ field }) => (
+                  <FormItem>
                           <FormLabel className="text-sm font-medium text-gray-700">Sub-Industry</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Your sub-industry"
+                    <FormControl>
+                      <Input 
+                              placeholder="Your specific industry"
                               className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-emerald-500"
-                              {...field} 
+                        {...field} 
                             />
                           </FormControl>
                           <FormMessage className="text-red-500 text-xs sm:text-sm" />
@@ -285,20 +287,20 @@ export function WaitlistSection() {
                             checked={field.value}
                             onCheckedChange={field.onChange}
                             className="border-gray-300 data-[state=checked]:bg-emerald-500 data-[state=checked]:border-emerald-500"
-                          />
-                        </FormControl>
+                      />
+                    </FormControl>
                         <div className="space-y-1 leading-none">
                           <FormLabel className="text-xs sm:text-sm text-gray-600">
                             I agree to receive updates about Reorbe and agree to the <a href="/terms" className="text-emerald-500 hover:text-emerald-600">terms of service</a>
                           </FormLabel>
                         </div>
-                      </FormItem>
-                    )}
-                  />
+                  </FormItem>
+                )}
+              />
               
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <Button 
-                      type="submit" 
+              <Button 
+                type="submit" 
                       className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-2 sm:py-3"
                       disabled={waitlistMutation.isPending}
                     >
@@ -311,10 +313,10 @@ export function WaitlistSection() {
                       onClick={() => window.open('https://example.com', '_blank')}
                     >
                       Take a Survey
-                    </Button>
+              </Button>
                   </div>
-                </form>
-              </Form>
+            </form>
+          </Form>
             )}
           </motion.div>
         </motion.div>
